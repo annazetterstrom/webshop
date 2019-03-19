@@ -1,3 +1,15 @@
+/* GLOBAL */
+
 * {
     text-align: center;
+    background-image: url('./images/background.jpg');
+    background-size: cover;
+}
+
+
+/* LAYOUT HELPERS */
+img {
+    -webkit-box-shadow: 12px 29px 81px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 12px 29px 81px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 12px 29px 81px 0px rgba(0, 0, 0, 0.75);
 }
