@@ -1,0 +1,34 @@
+{ 
+    "wands": [
+        {
+            "wood": "elder", "core": "thestral tail hair", "owner": "Albus Dumbledore", "type": "wand", "src": "images/wands/dumbledore.jpg", "price": 20
+        },
+        {
+            "wood": "walnut", "core": "dragon heartstring", "owner": "Bellatrix Lestrange", "type": "wand", "src": "images/wands/lestrange.jpg", "price": 10
+        },
+        {
+            "wood": "ash", "core": "unicorn hair", "owner": "Cedric Diggory", "type": "wand", "src": "images/wands/diggory.jpg", "price": 10
+        },
+        {
+            "wood": "rosewood", "core": "veela hair", "owner": "Fleur Delacour", "type": "wand", "src": "images/wands/delacour.jpg", "price": 10
+        },
+        {
+            "wood": "holly", "core": "phenix feather", "owner": "Harry Potter", "type": "wand", "src": "images/wands/potter.jpg", "price": 15
+        },
+        {
+            "wood": "vine", "core": "dragon heartstring", "owner": "Hermione Granger", "type": "wand", "src": "images/wands/granger.jpg", "price": 15
+        },
+        {
+            "wood": "cherry", "core": "unicorn hair", "owner": "Neville Longbottom", "type": "wand", "src": "images/wands/longbottom.jpg", "price": 10
+        },
+        {
+            "wood": "cypress", "core": "unicorn hair", "owner": "Remus Lupin", "type": "wand", "src": "images/wands/lupin.jpg", "price": 10
+        },
+        {
+            "wood": "willow", "core": "unicorn hair", "owner": "Ron Weasley", "type": "wand", "src": "images/wands/weasley.jpg", "price": 12
+        },
+        {
+            "wood": "hornbeam", "core": "dragon heartstring", "owner": "Viktor Krum", "type": "wand", "src": "images/wands/krum.jpg", "price": 13
+        }
+    ]
+}
