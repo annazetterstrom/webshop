@@ -1,3 +1,5 @@
+
+/* GLOBAL */
 html {
     background-image: url('./images/background2.jpg');
     background-position: center;
@@ -11,6 +13,15 @@ body {
     font-family: initial;
     font-weight: initial;
 }
+input {
+    color: #000;
+}
+
+.clearfix {
+    clear: both;
+    font-size: 1px;
+}
+/* HEADER AND NAV */
 .burgermenu {
     display: none;
     z-index: 3;
@@ -35,10 +46,71 @@ nav {
     width: 100vw;
     z-index: 2;
 }
-input {
-    color: #000;
+
+/* LAYOUT HELPERS */
+.card {
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0px 3px 5px #00000030;
+    transition: transform 150ms ease-in-out;
 }
-.clearfix {
-    clear: both;
-    font-size: 1px;
+
+.card:hover {
+    transform: scale(1.1, 1.1);
 }
+
+.card h2 {
+    margin-top: 0;
+}
+
+.card figure img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+}
+
+.card .card-inner {
+    padding: 1rem 2rem 2rem 2rem;
+}
+
+.page-section {
+    padding: 3rem;
+}
+
+.page-section.first-section {
+    margin-top: 5rem;
+}
+
+.page-section h2 {
+    margin-top: 0;
+}
+
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-cards .card {
+    margin: 0 1rem;
+    flex-basis: 25%;
+    flex-grow: 0;
+}
+
+.flex-cards .card:first-child {
+    margin-left: 0
+}
+
+.flex-cards .card:last-child {
+    margin-right: 0
+}
+
+
+/* RESPONSIVE */
