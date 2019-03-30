@@ -38,7 +38,9 @@ nav {
 input {
     color: #000;
 }
+h1 {
+    text-align: center;
+}
 .clearfix {
     clear: both;
-    font-size: 1px;
 }
