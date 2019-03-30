@@ -11,15 +11,21 @@ body {
     font-family: initial;
     font-weight: initial;
 }
-#burgermenu {
+.burgermenu {
     display: none;
     z-index: 3;
+    list-style: none;
+    list-style-position: inside;
+    padding-inline-start: 0;
 }
-aside, header {
+nav {
     position: relative;
     z-index: 3;
 }
-#darkness {
+.searchfield {
+    float: right;
+}
+.darkness {
     display: none;
     background-color: #000000aa;
     position: fixed;
@@ -31,4 +37,8 @@ aside, header {
 }
 input {
     color: #000;
+}
+.clearfix {
+    clear: both;
+    font-size: 1px;
 }
