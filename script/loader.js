@@ -27,7 +27,6 @@ $(function(){
         let obj = JSON.parse(xhr.responseText);
         for (let i = 0; i < obj.wands.length; i++) {
             let card = `
-                <div class="container flex-cards"> 
                     <div class="card"> 
                         <figure class="card-header">
                             <img src="${
@@ -41,8 +40,7 @@ $(function(){
                                         
                         </div>
                         <button class="addbutton" data-product-code=${obj.wands[i].code}>Add to Cart</button>
-                    </div>
-                </div> `;
+                    </div>`;
             $('main').append(card);
         }
         $('.addbutton').on('click', function(){
@@ -50,7 +48,7 @@ $(function(){
             let currentProductsString = localStorage.getItem('items');
             let currentProducts;
 
-            //det vill säga om currentProductsString är tom.
+            //det vill säga om currentProductsString är tom (null).
             if(!currentProductsString){
                 currentProducts = [];
             } else {
@@ -72,15 +70,10 @@ $(function(){
                         addItem = obj.wands[i];
                     }
                 }
-                currentProducts.push({item: addItem, num: 1});
-            } else {
-                currentProducts[index].num += 1;
+                currentProducts.push({item: addItem, num: "1"});
             }
             localStorage.setItem('items', JSON.stringify(currentProducts));
-            console.log(localStorage.getItem('items'));
         });
-            
-
-    } 
+    }
 }); // ready
 
