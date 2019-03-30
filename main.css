@@ -6,6 +6,7 @@ html {
     background-attachment: fixed;
     background-size: cover;
     color: #fff;
+    cursor: url('images/cursor6.png'), auto;
 }
 body {
     background: inherit;
@@ -20,6 +21,9 @@ input {
 .clearfix {
     clear: both;
     font-size: 1px;
+}
+button, input, a {
+    cursor: url('images/cursor6click.png'), auto;
 }
 /* HEADER AND NAV */
 .burgermenu {
