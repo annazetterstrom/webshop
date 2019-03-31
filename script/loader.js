@@ -1,6 +1,9 @@
 $(function(){
     //skriv ut trädslaget på Dumbledores trollstav i consolen
-
+    if(localStorage.getItem('enter')!=="true"){
+        console.log(location.pathname);
+        location.assign("index.html");
+    }
     load('/json/wands.json', createCards);
     function load(url, callback){
         xhr = new XMLHttpRequest();
