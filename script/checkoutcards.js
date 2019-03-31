@@ -39,7 +39,7 @@ $(function(){
                     if($this.attr("data-product-code") == itemArray[i].item.code){
                         let selectvalue = $this.siblings("select").val();
                         itemArray[i].num = selectvalue;
-                        $this.siblings('div').children().children().filter('.num').text(selectvalue);
+                        $this.siblings('div').find('.num').text(selectvalue);
                         break;
                     }
                 }

@@ -15,13 +15,13 @@ body {
 
 
 /* LAYOUT HELPERS */
-img {
+.map {
     cursor: url('images/cursor6click.png'), auto;
     box-shadow: 12px 29px 81px 0px rgb(0, 0, 0);
     height: 100vh;
     position: relative;
 }
-img:hover {
+.map:hover {
     box-shadow: 12px 29px 81px 0px rgb(255, 255, 255);
 }
 
@@ -42,4 +42,12 @@ input {
     width: 200px;
     background-image: none;
     cursor: url('images/cursor6click.png'), auto;
+}
+
+.flyingleft {
+    position: absolute;
+    width: 50px;
+    background-image: none;
+    right: -50px;
+
 }
