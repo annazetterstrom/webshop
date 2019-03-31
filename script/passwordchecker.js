@@ -3,7 +3,7 @@ $(function(){
     $('body').css({"height" : "100vh", "overflow": "hidden"});
     setInterval(animateOwl, 10000);
     if(localStorage.getItem('enter')=='true'){
-        $('.darkness').hide();
+        $('.darkness').hide().css({"z-index" : 2});
         $('.password').remove();
         animateIn();
     }
@@ -11,7 +11,8 @@ $(function(){
     $password.on('keyup', function(){
         let $this = $(this);
         if($this.val()=="i solemnly swear that i am up to no good"){
-            $('.darkness').hide();
+            $('.darkness').hide().css({"z-index" : 2});
+            $('.password').remove();
             animateIn();
             localStorage.setItem('enter', 'true');
         }
