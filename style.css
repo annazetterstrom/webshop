@@ -35,7 +35,7 @@ body {
     background-image: none;
     z-index: 2;
 }
-input {
+.password {
     margin-top: 300px;
     color: #fff;
     background-color: #444;
@@ -49,5 +49,4 @@ input {
     width: 50px;
     background-image: none;
     right: -50px;
-
 }
