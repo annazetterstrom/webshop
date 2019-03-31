@@ -2,7 +2,7 @@ $(function(){
     let $button = $('.burgerbutton');
     let $darkness = $('.darkness');
     let $menu = $('.burgermenu');
-    let $li = $('.burgermenu li')
+    let $li = $('.burgermenu li');
     let $label = $('[for=burgerbutton]');
 
     $button.on('click', toggler);
@@ -19,8 +19,6 @@ $(function(){
         let $this = $(this);
         $label.text($this.text());
         toggler();
-        //let obj = JSON.parse(getJson('json/' + $this.text().toLowerCase() + '.json'));
-        //createItems(obj)
     }
 
 });
