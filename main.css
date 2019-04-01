@@ -17,7 +17,6 @@ body {
 input {
     color: #000;
 }
-
 .clearfix {
     clear: both;
     font-size: 1px;
@@ -25,6 +24,7 @@ input {
 button, input, a {
     cursor: url('images/cursor6click.png'), auto;
 }
+
 /* HEADER AND NAV */
 .burgermenu {
     display: none;
@@ -59,15 +59,12 @@ nav {
     transition: transform 150ms ease-in-out;
     text-transform: capitalize;
 }
-
 .card:hover {
-    transform: scale(1.1, 1.1);
+    transform: none;
 }
-
 .card h2 {
     margin-top: 0;
 }
-
 .card figure img {
     width: auto;
     height: auto;
@@ -75,46 +72,37 @@ nav {
     border-top-right-radius: 6px;
     border-top-left-radius: 6px;
 }
-
 .card .card-inner {
     padding: 1rem 2rem 2rem 2rem;
 }
-
 .page-section {
     padding: 3rem;
 }
-
 .page-section.first-section {
     margin-top: 5rem;
 }
-
 .page-section h2 {
     margin-top: 0;
 }
-
-
 .flex-column {
     display: flex;
     flex-direction: column;
 }
-
 .flex-row {
     display: flex;
     flex-direction: row;
 }
-
 .flex-cards .card {
-    margin: 0 1rem;
+    margin: 1rem 1rem;
     flex-basis: 25%;
     flex-grow: 0;
 }
-
 .flex-cards .card:first-child {
-    margin-left: 0
+    margin-left: 1rem
 }
 
 .flex-cards .card:last-child {
-    margin-right: 0
+    margin-right: 1rem
 }
 
 .cart{
@@ -123,7 +111,8 @@ nav {
     height: auto;
 }
 
-/* RESPONSIVE */
+
+/* FIRST PAGE*/
 h1 {
     text-align: center;
 }
@@ -164,3 +153,23 @@ h1 {
 .map:hover {
     box-shadow: 12px 29px 81px 0px rgb(255, 255, 255);
 }
+
+/* RESPONSIVE */
+@media (min-width: 800px){
+    .card:hover {
+        transform: scale(1.1, 1.1);
+    }
+    .flex-cards .card {
+        margin: 0 1rem;
+        flex-basis: 25%;
+        flex-grow: 0;
+    }
+    .flex-cards .card:first-child {
+        margin-left: 0
+    }
+    .flex-cards .card:last-child {
+        margin-right: 0
+    }
+
+}
+

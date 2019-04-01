@@ -29,6 +29,7 @@ $(function(){
         let obj = JSON.parse(xhr.responseText);
         for (let i = 0; i < obj.wands.length; i++) {
             let card = `
+                <section class="page-section">
                     <div class="card"> 
                         <figure class="card-header">
                             <img src="${
@@ -42,7 +43,8 @@ $(function(){
                                         
                         </div>
                         <button class="addbutton" data-product-code=${obj.wands[i].code}>Add to Cart</button>
-                    </div>`;
+                    </div>
+                </section>`;
             $('main').append(card);
         }
         $('.addbutton').on('click', function(){
