@@ -19,7 +19,6 @@ input {
 }
 .clearfix {
     clear: both;
-    font-size: 1px;
 }
 button, input, a, .btn {
     cursor: url('images/cursor6click.png'), auto;
@@ -108,9 +107,12 @@ nav {
     margin-right: 1rem
 }
 
+a {
+    overflow: auto;
+}
 .cart{
     float: right;
-    width: 50px;
+    width: 30px;
     height: auto;
 }
 
