@@ -21,10 +21,13 @@ input {
     clear: both;
     font-size: 1px;
 }
-button, input, a {
+button, input, a, .btn {
     cursor: url('images/cursor6click.png'), auto;
 }
 
+.center{
+    text-align: center;
+}
 /* HEADER AND NAV */
 .burgermenu {
     display: none;
