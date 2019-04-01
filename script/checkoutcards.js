@@ -2,36 +2,28 @@ $(function(){
     createCards();
     function createCards(){
         let itemArray = JSON.parse(localStorage.getItem('items'));
-        $('main').html("");
+        $('.container').html("");
         if(!itemArray){
-            $('main').append('Din varukorg är tom!');
+            $('.container').append('Din varukorg är tom!');
         } else {
+            console.log(itemArray);
             for(let i=0;i<itemArray.length;i++){
                 let card = `
-                    <div class="card"> 
-                        <figure class="card-header">
-                            <img src="${itemArray[i].item.src}" alt="wand" /> 
-                        </figure>   
-                        <div class="card-inner">
-                            <h2>${itemArray[i].item.owner}</h2>
-                            <p>
-                                Wood: ${itemArray[i].item.wood}<br> 
-                                Core: ${itemArray[i].item.core}<br>
-                                Currently ordering: <span class="num">${itemArray[i].num}</span>
-                            </p>
-                        </div>
-                        <select class="">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                        <button class="addbutton" data-product-code="${itemArray[i].item.code}">Add</button>
-                        <button class="removebutton" data-product-code="${itemArray[i].item.code}">x</button>
-                    </div>`;
-                $('main').append(card);
+                  <p>${itemArray[i].item.owner} <span class="price">${itemArray[i].item.price}</span> Galleons</p>
+             
+                  `;
+                $('.container').append(card);
             }
+            let total = 0;
+            let $prices = $('.price');
+            console.log($prices[0]);
+            for(let i=0;i<$prices.length;i++){
+                total += +$prices[i].innerText;
+                console.log($prices[i].innerText);
+            }
+            $('.total').text(total);
+            console.log(total);
+            $('.num-item').text(itemArray.length)
             $('.addbutton').on('click', function(){
                 let $this = $(this);
                 let itemArray = JSON.parse(localStorage.getItem('items'));
