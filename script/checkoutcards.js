@@ -4,28 +4,31 @@ $(function(){
         let itemArray = JSON.parse(localStorage.getItem('items'));
         $('.container').html("");
         if(!itemArray){
-            $('.container').append('Your cart is empty!');
+            $('main > *:not(h4)').hide();
+            $('main').append('Your cart is empty!');
         } else {
-            console.log(itemArray);
             for(let i=0;i<itemArray.length;i++){
                 let card = `
                 <p>
                     <span>${itemArray[i].item.owner}  <span class="price">${itemArray[i].item.price}</span> Galleons</span>
-                <button data-product-code=${itemArray[i].item.code} class="sm-btn btn-danger removebutton">X</button>
-                <input class="quantity" type="number" max="5" min="1" />
+                    <button data-product-code=${itemArray[i].item.code} class="sm-btn btn-danger removebutton">X</button>
+                    <input data-product-code=${itemArray[i].item.code} class="quantity" type="number" max="5" min="1" value="${itemArray[i].num}" />
                </p>
-                  `;
+                `;
                 $('.container').append(card);
             }
-            let total = 0;
-            let $prices = $('.price');
-            console.log($prices[0]);
-            for(let i=0;i<$prices.length;i++){
-                total += +$prices[i].innerText;
-                console.log($prices[i].innerText);
-            }
-            $('.total').text(total);
-            console.log(total);
+            $('.quantity').on('change', function(){
+                let $this = $(this);
+                let itemArray = JSON.parse(localStorage.getItem('items'));
+                for(let i=0;i<itemArray.length;i++){
+                    if(itemArray[i].item.code==$this.attr("data-product-code")){
+                        itemArray[i].num = $this.val();
+                        localStorage.setItem('items', JSON.stringify(itemArray));
+                    }
+                }
+                calculateTotal();
+            });
+            calculateTotal();
             $('.num-item').text(itemArray.length)
             $('.addbutton').on('click', function(){
                 let $this = $(this);
@@ -60,4 +63,17 @@ $(function(){
             })
         }
     }
+    function calculateTotal(){
+        let total = 0;
+        let $prices = $('.price');
+        let $quantity = $('.quantity');
+        for(let i=0;i<$prices.length;i++){
+            total += +$prices[i].innerText * $quantity[i].value;
+        }
+        $('.total').text(total);
+    }
+    $('.empty').on('click', function(){
+        localStorage.removeItem('items');
+        $('.container').html("");
+    });
 });
