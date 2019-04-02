@@ -74,6 +74,7 @@ $(function(){
     }
     $('.empty').on('click', function(){
         localStorage.removeItem('items');
-        $('.container').html("");
+        $('main > *:not(h4)').hide();
+        $('main').append('Your cart is empty!');
     });
 });
