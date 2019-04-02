@@ -5,7 +5,7 @@ $(function () {
         let itemArray = JSON.parse(localStorage.getItem('items'));
         $('main').html("");
         if (!itemArray) {
-            $('main').append('Din varukorg är tom!');
+            $('main').append('Your cart is empty');
         } else {
             for (let i = 0; i < itemArray.length; i++) {
                 let card = `
