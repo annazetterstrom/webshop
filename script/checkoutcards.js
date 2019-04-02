@@ -6,7 +6,6 @@ $(function(){
         if(!itemArray){
             $('main > *:not(h4)').hide();
             $('main').append('Your cart is empty!');
-            console.log($('main:not(h4)')[0]);
         } else {
             for(let i=0;i<itemArray.length;i++){
                 let card = `
@@ -73,4 +72,8 @@ $(function(){
         }
         $('.total').text(total);
     }
+    $('.empty').on('click', function(){
+        localStorage.removeItem('items');
+        $('.container').html("");
+    });
 });
