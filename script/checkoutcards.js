@@ -49,6 +49,7 @@ $(function () {
                         itemArray.splice(i, 1);
                         if (itemArray.length === 0) {
                             localStorage.removeItem('items');
+                            $('.num-item').text(itemArray.length);
                         } else {
                             localStorage.setItem('items', JSON.stringify(itemArray));
                         }
