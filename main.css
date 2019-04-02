@@ -1,4 +1,3 @@
-
 /* GLOBAL */
 html {
     background-image: url('./images/background2.jpg');
@@ -27,6 +26,7 @@ button, input, a, .btn {
 .center{
     text-align: center;
 }
+
 /* HEADER AND NAV */
 .burgermenu {
     display: none;
@@ -60,6 +60,7 @@ nav {
     box-shadow: 0px 3px 5px #00000030;
     transition: transform 150ms ease-in-out;
     text-transform: capitalize;
+
 }
 .card:hover {
     transform: none;
@@ -120,6 +121,7 @@ a {
 /* FIRST PAGE*/
 h1 {
     text-align: center;
+    color: white;
 }
 
 .password {
@@ -180,6 +182,18 @@ h1 {
     .flex-cards .card:last-child {
         margin-right: 0
     }
-
+    .main{
+        display: flex; 
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: center;
+        
+    }
+    .card {
+        width: 300px;
+        height: 600px;
+    }
+    
+    
 }
 

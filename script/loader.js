@@ -38,8 +38,11 @@ $(function(){
                         </figure>   
                         <div class="card-inner">
                             <h2>${obj.wands[i].owner}</h2>
-                            <p>Wood: ${obj.wands[i].wood}<br> 
-                                Core: ${obj.wands[i].core}</p>
+                            <p><b>Wood:</b> ${obj.wands[i].wood}<br> 
+                                <b>Core:</b> ${obj.wands[i].core} <br>
+                              <b> Description:</b> <br>
+                                ${obj.wands[i].description}
+                                </p>
                                         
                         </div>
                         <button class="addbutton" data-product-code=${obj.wands[i].code}>Add to Cart</button>
