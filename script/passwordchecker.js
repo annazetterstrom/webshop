@@ -7,6 +7,11 @@ $(function(){
         $('.password').remove();
         animateIn();
     }
+    if(sessionStorage.getItem('entered') == "true"){
+        animating = false;
+        $('.background1').remove();
+        $('body').css({"height" : "unset", "overflow": "auto"});
+    }
     let $password = $('.darkness input');
     $password.on('keyup', function(){
         let $this = $(this);
@@ -23,6 +28,7 @@ $(function(){
         animating = false;
         $this.animate({"left" : "50vw"}, 300, "swing", slideAway).animate({"left" : "50vw"}, 1200, "swing").fadeOut(500);
         $('body').css({"height" : "unset", "overflow": "auto"});
+        sessionStorage.setItem('entered', "true");
     })
 
     function animateIn(){
