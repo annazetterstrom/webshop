@@ -43,6 +43,7 @@ nav {
     float: right;
 }
 .darkness {
+    text-align: center;
     background-color: #000000aa;
     position: fixed;
     top: 0;
@@ -167,6 +168,9 @@ h1 {
 /* validation */
 .error {
     color: red;
+}
+.deliveryoptions {
+    display: none;
 }
 
 /* RESPONSIVE */
