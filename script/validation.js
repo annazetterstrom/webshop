@@ -1,7 +1,7 @@
 //validation of form
 $(function(){
     let $form = $('form');
-    let $input = $('input');
+    let $input = $('form input');
     $form.on('submit', validate);
     function validate(e){
         e.preventDefault()
