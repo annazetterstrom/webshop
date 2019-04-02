@@ -9,8 +9,8 @@ $(function(){
             console.log(itemArray);
             for(let i=0;i<itemArray.length;i++){
                 let card = `
-                  <p>${itemArray[i].item.owner} <span class="price">${itemArray[i].item.price}</span> Galleons</p>
-             
+                    <p>${itemArray[i].item.owner} <span class="price">${itemArray[i].item.price}</span> Galleons</p>
+            
                   `;
                 $('.container').append(card);
             }
