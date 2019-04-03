@@ -226,6 +226,14 @@ h1 {
         height: 600px;
         margin-bottom: 100px; 
     }
+    .card figure img {
+        width: fit-content;
+        height: 300px;
+        max-width: 100%;
+        border-top-right-radius: 6px;
+        border-top-left-radius: 6px;
+    }
+    
     
     
 }
