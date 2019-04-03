@@ -1,0 +1,34 @@
+{
+    "books": [
+        {
+            "book": "Monster book of monsters", "author": "Edwardus Lima", "description": "A vicious guide to monstrous creatures", "src": "images/books/monster-book-of-monsters.jpg", "price": 20, "code": "book1"
+        },
+        {
+            "book": "Advanced Potion-Making", "author": "Libatius Borage", "description": "is a Potions textbook used by Hogwarts for N.E.W.T level Potions classes", "src": "images/books/Advanced_Potion-Making.png", "price": 20, "code": "book2"
+        },
+        {
+            "book": "Quidditch Through the Ages", "author": "Kennilworthy Whisp", "description": "A guid to quidditch through the ages written by a quidditch expert", "src": "images/books/quidditch.jpg", "price": 20, "code": "book3"
+        },
+        {
+            "book": "Dragon Breeding for Pleasure and Profit", "author": "Unknown", "description": "Tried and tested tips to help you breed dragons, including the old-time favourite of brandy and chicken blood every half hour for newly-hatched chicks.", "src": "images/books/dragon-breeding.jpg", "price": 20, "code": "book4"
+        }, 
+        {
+            "book": "Fantastic Beasts and Where to Find Them", "author": "Newt Scamander", "description": "I have visited lairs, burrows and nests across five continents, observed the curious habits of magical beasts in a hundred countries, witnessed their powers, gained their trust and, on occasion, beaten them off with my travelling kettle.", "src": "images/books/fantastic-beasts.jpg", "price": 20, "code": "book5"
+        },
+        {
+            "book": "Guide to Advanced Transfiguration", "author": "Unknown", "description": "is a textbook used by sixth and seventh year students of Hogwarts School of Witchcraft and Wizardry, it was a N.E.W.T.-level textbook, used for advanced study in the subject of Transfiguration.", "src": "images/books/guide-to-advanced-transfiguration.jpg", "price": 20, "code": "book6"
+        },
+        {
+            "book": "Handbook of Do-It-Yourself Broom Care", "author": "Unknown", "description": "is a manual that comes with the Broomstick Servicing Kit ", "src": "images/books/HandbookofDoItYourselfBroomcare.jpg", "price": 20, "code": "book7"
+        },
+        {
+            "book": "One Thousand Magical Herbs and Fungi", "author": "Phyllida Spore", "description": "A comprehensive botanical A-Z of magical herbs and fungi for easy plant identification and application", "src": "images/books/one-thousand-magical-herbs.jpg", "price": 20, "code": "book8"
+        },
+        {
+            "book": "Year With The Yeti", "author": "Gilderoy Lockhart", "description": "Another instalment of adventure from Gilderoy Lockhart", "src": "images/books/Year_with_the_Yeti.jpg", "price": 20, "code": "book9"
+        },
+        {
+            "book": "The Dark Forces: A Guide to Self Protection", "author": "Quentin Trimble", "description": "This book gives an excellent grounding in magical self-defence", "src": "images/books/dark-forces.jpeg", "price": 20, "code": "book10"
+        }
+    ]
+}
