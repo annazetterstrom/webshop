@@ -28,6 +28,15 @@ button, input, a, .btn {
 }
 
 /* HEADER AND NAV */
+header {
+    background-color: #00000055;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    padding-right: 15px;
+    padding-bottom: 10px;
+}
 .burgermenu {
     display: none;
     z-index: 3;
@@ -41,6 +50,8 @@ nav {
 }
 .searchfield {
     float: right;
+    height: 34px;
+    border-radius: 50px 0 0 50px;
 }
 .darkness {
     text-align: center;
@@ -114,11 +125,13 @@ a {
 }
 .cart{
     float: right;
-    width: 30px;
-    height: auto;
+    border-radius: 0 50px 50px 0;
 }
 .quantity{
     width: 30px;
+}
+.main {
+    margin-top: 100px;
 }
 
 
