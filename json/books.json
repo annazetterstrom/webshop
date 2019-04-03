@@ -19,7 +19,7 @@
             "book": "Guide to Advanced Transfiguration", "author": "Unknown", "description": "is a textbook used by sixth and seventh year students of Hogwarts School of Witchcraft and Wizardry, it was a N.E.W.T.-level textbook, used for advanced study in the subject of Transfiguration.", "src": "images/books/guide-to-advanced-transfiguration.jpg", "price": 20, "code": "book6"
         },
         {
-            "book": "Handbook of Do-It-Yourself Broom Care", "author": "Unknown", "description": "is a manual that comes with the Broomstick Servicing Kit ", "src": "images/books/HandbookofDoItYourselfBroomcare.jpg", "price": 20, "code": "book7"
+            "book": "Handbook of Do-It-Yourself Broom Care", "author": "Unknown", "description": "is a guide to taking care of your broomstick.", "src": "images/books/HandbookofDoItYourselfBroomcare.jpg", "price": 20, "code": "book7"
         },
         {
             "book": "One Thousand Magical Herbs and Fungi", "author": "Phyllida Spore", "description": "A comprehensive botanical A-Z of magical herbs and fungi for easy plant identification and application", "src": "images/books/one-thousand-magical-herbs.jpg", "price": 20, "code": "book8"
