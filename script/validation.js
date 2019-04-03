@@ -8,7 +8,8 @@ $(function(){
         $('.error').remove();
         $('form div').css({"border" : "none"});
         if(checkName()&&checkMail()&&checkAdress()&&checkCity()){
-            $('.deliveryoptions').fadeIn();
+            $('.paymentoptions').fadeIn();
+            window.scrollTo(0,document.body.scrollHeight);
         }
         
     }
