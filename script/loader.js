@@ -2,7 +2,8 @@ $(function(){
     let currentStuff = JSON.parse(localStorage.getItem('items'));
     currentStuff = currentStuff ? currentStuff : [];
     $('.badge').text(currentStuff.length);
-    load('./json/wands.json', createCards);
+    //load('./json/wands.json', createWandCards);
+    load('./json/books.json', createBookCards);
     function load(url, callback){
         xhr = new XMLHttpRequest();
         xhr.addEventListener('readystatechange', function(){
@@ -13,10 +14,11 @@ $(function(){
         xhr.open('GET', url, true);
         xhr.send();
     }
-    function createCards(xhr){
+    // Wands
+    function createWandCards(xhr){
         let obj = JSON.parse(xhr.responseText);
         for (let i = 0; i < obj.wands.length; i++) {
-            let card = `
+            let wandCard = `
                 <section class="page-section">
                     <div class="card"> 
                         <figure class="card-header">
@@ -36,8 +38,37 @@ $(function(){
                         <button class="addbutton" data-product-code=${obj.wands[i].code}>Add to Cart</button>
                     </div>
                 </section>`;
-            $('main').append(card);
+            $('main').append(wandCard);
         }
+    // Books 
+    function createBookCards(xhr){
+        let obj = JSON.parse(xhr.responseText);
+        for (let i = 0; i < obj.books.length; i++) {
+            let bookCard = `
+                <section class="page-section">
+                    <div class="card"> 
+                        <figure class="card-header">
+                            <img src="${
+                                obj.books[i].src
+                            }" alt="book" /> 
+                        </figure>   
+                        <div class="card-inner">
+                            <h2>${obj.books[i].title}</h2>
+                            <p><b>Author:</b> ${obj.wands[i].author}<br> 
+                                <b>Price:</b> ${obj.wands[i].price} <br>
+                                <b> Description:</b> <br>
+                                ${obj.books[i].description}
+                            </p>
+                                        
+                        </div>
+                        <button class="addbutton" data-product-code=${obj.books[i].code}>Add to Cart</button>
+                    </div>
+                </section>`;
+            $('main').append(bookCard);
+        }
+    }
+
+
         $('.addbutton').on('click', function(){
             let $this = $(this);
             let currentProductsString = localStorage.getItem('items');
