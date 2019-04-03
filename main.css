@@ -30,6 +30,7 @@ button, input, a, .btn {
     height: 10px;
     border-radius: 50%;
     z-index: 5;
+    pointer-events: none;
 }
 
 .center{
