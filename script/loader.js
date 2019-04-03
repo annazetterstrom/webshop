@@ -2,7 +2,7 @@ $(function(){
     let currentStuff = JSON.parse(localStorage.getItem('items'));
     currentStuff = currentStuff ? currentStuff : [];
     $('.badge').text(currentStuff.length);
-    load('./json/books.json', createBookCards);
+    load('./json/wands.json', createWandCards);
     function load(url, callback){
         xhr = new XMLHttpRequest();
         xhr.addEventListener('readystatechange', function(){
