@@ -1,7 +1,13 @@
+//kollad
+
 $(function(){
     let currentStuff = JSON.parse(localStorage.getItem('items'));
     currentStuff = currentStuff ? currentStuff : [];
-    $('.badge').text(currentStuff.length);
+    let total = 0;
+    for(let i=0;i<currentStuff.length;i++){
+        total += currentStuff[i].num;
+    }
+    $('.badge').text(total);
     load('./json/wands.json', createCards);
     
     //menu stuff
@@ -76,7 +82,7 @@ $(function(){
             let currentProductsString = localStorage.getItem('items');
             let currentProducts;
 
-            //det vill säga om currentProductsString är tom (null).
+            //det vill säga om currentProductsString är tom
             if(!currentProductsString){
                 currentProducts = [];
             } else {
@@ -98,11 +104,17 @@ $(function(){
                         addItem = arr[i];
                     }
                 }
-                currentProducts.push({item: addItem, num: "1"});
+                currentProducts.push({item: addItem, num: 1});
+            } else {
+                currentProducts[index].num += 1;
             }
             localStorage.setItem('items', JSON.stringify(currentProducts));
-            $('.badge').text(currentProducts.length);
-            console.log(currentProducts.length);
+            let tot = 0;
+            for(let i=0;i<currentProducts.length;i++){
+                tot += currentProducts[i].num;
+            }
+            $('.badge').text(tot);
+            console.log(tot);
         });
     }
 

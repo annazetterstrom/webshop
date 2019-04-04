@@ -1,3 +1,5 @@
+//kollad
+
 $(function(){
     let animating = true;
     $('body').css({"height" : "100vh", "overflow": "hidden"});
@@ -12,10 +14,10 @@ $(function(){
         $('.background1').remove();
         $('body').css({"height" : "unset", "overflow": "auto"});
     }
-    let $password = $('.darkness input');
-    $password.on('keyup', function(){
+    let $input = $('.darkness input');
+    $input.on('keyup', function(){
         let $this = $(this);
-        if($this.val()=="i solemnly swear that i am up to no good"){
+        if($this.val().toLowerCase()=="i solemnly swear that i am up to no good"){
             $('.darkness').hide().css({"z-index" : 2});
             $('.password').remove();
             animateIn();
@@ -26,7 +28,7 @@ $(function(){
     $('.map').on('click', function(){
         let $this = $(this);
         animating = false;
-        $this.animate({"left" : "50vw"}, 300, "swing", slideAway).animate({"left" : "50vw"}, 1200, "swing").fadeOut(500);
+        $this.animate({"left" : "50vw"}, 300, "swing", slideAway).delay(1200).fadeOut(500);
         $('body').css({"height" : "unset", "overflow": "auto"});
         sessionStorage.setItem('entered', "true");
     })

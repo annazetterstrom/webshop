@@ -1,5 +1,16 @@
+//Kollad Tengil
+
 $(function(){
     createCards();
+
+    //rensar localStorage från items och gömmer massa html
+    $('.empty').on('click', function(){
+        localStorage.removeItem('items');
+        $('main > *:not(h4)').hide();
+        $('main').append('Your cart is empty!');
+    });
+
+    //Skapar "kort" från infon i localStorage och lägger till de i containern
     function createCards(){
         let itemArray = JSON.parse(localStorage.getItem('items'));
         $('.container').html("");
@@ -17,6 +28,7 @@ $(function(){
                 `;
                 $('.container').append(card);
             }
+            calculateTotal();
             $('.quantity').on('change', function(){
                 let $this = $(this);
                 let itemArray = JSON.parse(localStorage.getItem('items'));
@@ -28,24 +40,12 @@ $(function(){
                 }
                 calculateTotal();
             });
-            calculateTotal();
-            $('.num-item').text(itemArray.length)
-            $('.addbutton').on('click', function(){
-                let $this = $(this);
-                let itemArray = JSON.parse(localStorage.getItem('items'));
-                for(let i=0;i<itemArray.length;i++){
-                    if($this.attr("data-product-code") == itemArray[i].item.code){
-                        let selectvalue = $this.siblings("select").val();
-                        itemArray[i].num = selectvalue;
-                        $this.siblings('div').find('.num').text(selectvalue);
-                        break;
-                    }
-                }
-                localStorage.setItem('items', JSON.stringify(itemArray));
-            });
+            $('.num-item').text(itemArray.length);
             $('.removebutton').on('click', function(){
                 let $this = $(this);
                 let itemArray = JSON.parse(localStorage.getItem('items'));
+
+                //tar fram itemet i itemArrayen som motsvarar kortet och tar bort det. Sparar sedan arrayen i localstorage. Efter det skapas nya kort utifrån infon i localStorage igen.
                 for(let i=0;i<itemArray.length;i++){
                     if($this.attr("data-product-code") == itemArray[i].item.code){
                         itemArray.splice(i, 1);
@@ -54,15 +54,15 @@ $(function(){
                             $('.num-item').text(itemArray.length);
                         } else {
                             localStorage.setItem('items', JSON.stringify(itemArray));
-                         
                         }
                         break;
                     }
                 }
                 createCards();
-            })
+            });
         }
     }
+    //räknar ut totala kostnaden och uppdaterar en span på sidan
     function calculateTotal(){
         let total = 0;
         let $prices = $('.price');
@@ -72,9 +72,5 @@ $(function(){
         }
         $('.total').text(total);
     }
-    $('.empty').on('click', function(){
-        localStorage.removeItem('items');
-        $('main > *:not(h4)').hide();
-        $('main').append('Your cart is empty!');
-    });
+
 });

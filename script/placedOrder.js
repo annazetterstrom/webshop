@@ -1,3 +1,5 @@
+//kollad Tengil
+
 $(function () {
     createCards();
 

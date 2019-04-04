@@ -167,6 +167,7 @@ h1 {
     background-image: none;
     right: -50px;
     z-index: 6;
+    pointer-events: none;
 }
 .background1 {
     position: fixed;
