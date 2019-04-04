@@ -21,6 +21,8 @@ $(function(){
     $darkness.on('click', toggler);
     $li.on('click', loadItems);
 
+    $('.searchfield').on('keyup', search);
+
     function toggler(){
         if(localStorage.getItem('enter')=='true'){
             $darkness.toggle();
@@ -65,8 +67,8 @@ $(function(){
                             }" alt="wand" /> 
                         </figure>   
                         <div class="card-inner">
-                            <h2>${arr[i].title}</h2>
-                            <p>
+                            <h2 class="title">${arr[i].title}</h2>
+                            <p class="description">
                                 ${arr[i].description}
                             </p>
                             <p>${arr[i].price} Galleons</p>
@@ -116,6 +118,19 @@ $(function(){
             $('.badge').text(tot);
             console.log(tot);
         });
+    }
+
+    function search(){
+        let searchval = $(this).val().toLowerCase();
+        $(".page-section").hide();
+        let $title = $(`.page-section .title`);
+        let $description = $(`.page-section .description`);
+        for(let i=0;i<$title.length;i++){
+            if($title[i].innerText.toLowerCase().includes(searchval) || $description[i].innerText.toLowerCase().includes(searchval)){
+                $($title[i]).closest(".page-section").show();
+            }
+        }
+
     }
 
 }); // ready
