@@ -32,6 +32,12 @@ button, input, a, .btn {
     z-index: 5;
     pointer-events: none;
 }
+.step {
+    position: fixed;
+    width: 20px;
+    right: 100px;
+    z-index: 5;
+}
 
 .center{
     text-align: center;
