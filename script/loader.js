@@ -2,7 +2,7 @@ $(function(){
     let currentStuff = JSON.parse(localStorage.getItem('items'));
     currentStuff = currentStuff ? currentStuff : [];
     $('.badge').text(currentStuff.length);
-    load('./json/books.json', createBookCards);
+    load('./json/wands.json', createCards);
     
     //menu stuff
     let $burgerbutton = $('.burgerbutton');
@@ -26,11 +26,9 @@ $(function(){
         $label.text($this.text());
         toggler();
         if($this.text() == "Books"){
-            load('./json/books.json', createBookCards);
-            console.log("book")
+            load('./json/books.json', createCards);
         } else if($this.text() == "Wands"){
-            load('./json/wands.json', createWandCards);
-            console.log("wand")
+            load('./json/wands.json', createCards);
         }
     }
 
@@ -45,28 +43,27 @@ $(function(){
         xhr.open('GET', url, true);
         xhr.send();
     }
-    function createWandCards(xhr){
-        let obj = JSON.parse(xhr.responseText);
+    function createCards(xhr){
+        let arr = JSON.parse(xhr.responseText).arr;
         $('main').html("");
-        for (let i = 0; i < obj.wands.length; i++) {
+        for (let i = 0; i < arr.length; i++) {
             let card = `
                 <section class="page-section">
                     <div class="card"> 
                         <figure class="card-header">
                             <img src="${
-                                obj.wands[i].src
+                                arr[i].src
                             }" alt="wand" /> 
                         </figure>   
                         <div class="card-inner">
-                            <h2>${obj.wands[i].owner}</h2>
-                            <p><b>Wood:</b> ${obj.wands[i].wood}<br> 
-                                <b>Core:</b> ${obj.wands[i].core} <br>
-                                <b> Description:</b> <br>
-                                ${obj.wands[i].description}
+                            <h2>${arr[i].title}</h2>
+                            <p>
+                                ${arr[i].description}
                             </p>
+                            <p>${arr[i].price} Galleons</p>
                                         
                         </div>
-                        <button class="addbutton" data-product-code=${obj.wands[i].code}>Add to Cart</button>
+                        <button class="addbutton btn btn-success" data-product-code=${arr[i].code}>Add to Cart</button>
                     </div>
                 </section>`;
             $('main').append(card);
@@ -93,9 +90,9 @@ $(function(){
             if(checker){
                 //lägg till {item, num} till currentProducts
                 let addItem;
-                for(let i=0;i<obj.wands.length;i++){
-                    if(obj.wands[i].code == $this.attr("data-product-code")){
-                        addItem = obj.wands[i];
+                for(let i=0;i<arr.length;i++){
+                    if(arr[i].code == $this.attr("data-product-code")){
+                        addItem = arr[i];
                     }
                 }
                 currentProducts.push({item: addItem, num: "1"});
@@ -106,66 +103,5 @@ $(function(){
         });
     }
 
-    //books
-    function createBookCards(xhr){
-        let obj = JSON.parse(xhr.responseText);
-        $('main').html("");
-        for (let i = 0; i < obj.books.length; i++) {
-            let bookCard = `
-            <section class="page-section">
-                <div class="card"> 
-                    <figure class="card-header">
-                        <img src="${
-                            obj.books[i].src
-                        }" alt="book" /> 
-                    </figure>   
-                    <div class="card-inner">
-                        <h2>${obj.books[i].title}</h2>
-                        <p><b>Author:</b> ${obj.books[i].author}<br> 
-                            <b>Price:</b> ${obj.books[i].price} <br>
-                            <b> Description:</b> <br>
-                            ${obj.books[i].description}
-                        </p>
-                                    
-                    </div>
-                    <button class="addbutton" data-product-code=${obj.books[i].code}>Add to Cart</button>
-                </div>
-            </section>`;
-        $('main').append(bookCard);
-        }
-        $('.addbutton').on('click', function(){
-            let $this = $(this);
-            let currentProductsString = localStorage.getItem('items');
-            let currentProducts;
-
-            //det vill säga om currentProductsString är tom (null).
-            if(!currentProductsString){
-                currentProducts = [];
-            } else {
-                currentProducts = JSON.parse(currentProductsString);
-            }
-            let checker = true;
-            let index;
-            for(let i=0;i<currentProducts.length;i++){
-                if(currentProducts[i].item.code == ($this.attr("data-product-code"))){
-                    checker = false;
-                    index = i;
-                }
-            }
-            if(checker){
-                //lägg till {item, num} till currentProducts
-                let addItem;
-                for(let i=0;i<obj.books.length;i++){
-                    if(obj.books[i].code == $this.attr("data-product-code")){
-                        addItem = obj.books[i];
-                    }
-                }
-                currentProducts.push({item: addItem, num: "1"});
-            }
-            localStorage.setItem('items', JSON.stringify(currentProducts));
-            $('.badge').text(currentProducts.length);
-            console.log(currentProducts.length);
-        });
-    }
 }); // ready
 

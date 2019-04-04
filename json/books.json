@@ -1,5 +1,5 @@
 {
-    "books": [
+    "arr": [
         {
             "title": "Monster book of monsters", "author": "Edwardus Lima", "description": "A vicious guide to monstrous creatures", "src": "images/books/monster-book-of-monsters.jpg", "price": 15, "code": "book1"
         },
