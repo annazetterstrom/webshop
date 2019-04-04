@@ -3,6 +3,38 @@ $(function(){
     currentStuff = currentStuff ? currentStuff : [];
     $('.badge').text(currentStuff.length);
     load('./json/books.json', createBookCards);
+    
+    //menu stuff
+    let $burgerbutton = $('.burgerbutton');
+    let $darkness = $('.darkness');
+    let $menu = $('.burgermenu');
+    let $li = $('.burgermenu li');
+    let $label = $('[for=burgerbutton]');
+
+    $burgerbutton.on('click', toggler);
+    $darkness.on('click', toggler);
+    $li.on('click', loadItems);
+
+    function toggler(){
+        if(localStorage.getItem('enter')=='true'){
+            $darkness.toggle();
+            $menu.fadeToggle(300);
+        }
+    }
+    function loadItems(){
+        let $this = $(this);
+        $label.text($this.text());
+        toggler();
+        if($this.text() == "Books"){
+            load('./json/books.json', createBookCards);
+            console.log("book")
+        } else if($this.text() == "Wands"){
+            load('./json/wands.json', createWandCards);
+            console.log("wand")
+        }
+    }
+
+
     function load(url, callback){
         xhr = new XMLHttpRequest();
         xhr.addEventListener('readystatechange', function(){
@@ -15,6 +47,7 @@ $(function(){
     }
     function createWandCards(xhr){
         let obj = JSON.parse(xhr.responseText);
+        $('main').html("");
         for (let i = 0; i < obj.wands.length; i++) {
             let card = `
                 <section class="page-section">
@@ -76,7 +109,7 @@ $(function(){
     //books
     function createBookCards(xhr){
         let obj = JSON.parse(xhr.responseText);
-        console.log(obj.books);
+        $('main').html("");
         for (let i = 0; i < obj.books.length; i++) {
             let bookCard = `
             <section class="page-section">
@@ -122,9 +155,9 @@ $(function(){
             if(checker){
                 //lägg till {item, num} till currentProducts
                 let addItem;
-                for(let i=0;i<obj.wands.length;i++){
-                    if(obj.wands[i].code == $this.attr("data-product-code")){
-                        addItem = obj.wands[i];
+                for(let i=0;i<obj.books.length;i++){
+                    if(obj.books[i].code == $this.attr("data-product-code")){
+                        addItem = obj.books[i];
                     }
                 }
                 currentProducts.push({item: addItem, num: "1"});

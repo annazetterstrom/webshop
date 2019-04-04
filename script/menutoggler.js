@@ -1,11 +1,11 @@
 $(function(){
-    let $button = $('.burgerbutton');
+    let $burgerbutton = $('.burgerbutton');
     let $darkness = $('.darkness');
     let $menu = $('.burgermenu');
     let $li = $('.burgermenu li');
     let $label = $('[for=burgerbutton]');
 
-    $button.on('click', toggler);
+    $burgerbutton.on('click', toggler);
     $darkness.on('click', toggler);
     $li.on('click', loadItems);
 
