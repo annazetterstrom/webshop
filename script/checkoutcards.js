@@ -10,7 +10,7 @@ $(function(){
             for(let i=0;i<itemArray.length;i++){
                 let card = `
                 <p>
-                    <span>${itemArray[i].item.owner}  <span class="price">${itemArray[i].item.price}</span> Galleons</span>
+                    <span>${itemArray[i].item.title}  <span class="price">${itemArray[i].item.price}</span> Galleons</span>
                     <button data-product-code=${itemArray[i].item.code} class="sm-btn btn-danger removebutton">X</button>
                     <input data-product-code=${itemArray[i].item.code} class="quantity" type="number" max="5" min="1" value="${itemArray[i].num}" />
                </p>

@@ -29,6 +29,9 @@ $(function(){
             load('./json/books.json', createCards);
         } else if($this.text() == "Wands"){
             load('./json/wands.json', createCards);
+        } else if($this.text() == "Train Tickets"){
+            load('./json/tickets.json', createCards);
+
         }
     }
 

@@ -1,5 +1,5 @@
 {
     "arr" : [
-        {"type" : "ticket", "price" : 5, "src" : "images/ticket", "code" : "ticket0", "description" : "This ticket takes you from London to Hogwarts"}
+        {"type" : "ticket", "title" : "Ticket", "price" : 5, "src" : "images/ticket/ticket.jpg", "code" : "ticket0", "description" : "This ticket takes you from London to Hogwarts"}
     ]
 }

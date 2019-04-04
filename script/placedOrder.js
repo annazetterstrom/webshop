@@ -14,10 +14,8 @@ $(function () {
                             <img src="${itemArray[i].item.src}" alt="wand" /> 
                         </figure>   
                         <div class="card-inner">
-                            <h2>${itemArray[i].item.owner}</h2>
+                            <h2>${itemArray[i].item.title}</h2>
                             <p>
-                                Wood: ${itemArray[i].item.wood}<br> 
-                                Core: ${itemArray[i].item.core}<br>
                                 Price Each: ${itemArray[i].item.price} Galleons <br>
                                 Quantity: <span class="num">${itemArray[i].num}</span>
                             </p>
