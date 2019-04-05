@@ -45,6 +45,7 @@ $(function(){
                 }
                 $('.num-item').text(tot);
             });
+            
             let tot = 0;
             for(let i=0;i<itemArray.length;i++){
                 tot += itemArray[i].num;
