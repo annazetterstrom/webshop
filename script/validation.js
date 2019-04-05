@@ -1,4 +1,4 @@
-//kollad
+// Validation function checks all inputfeilds and if they return true you get payment options. 
 $(function(){
     let $form = $('form');
     let $input = $('form input');

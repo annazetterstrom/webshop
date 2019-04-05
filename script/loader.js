@@ -90,6 +90,7 @@ $(function(){
             } else {
                 currentProducts = JSON.parse(currentProductsString);
             }
+
             let checker = true;
             let index;
             for(let i=0;i<currentProducts.length;i++){
@@ -116,10 +117,9 @@ $(function(){
                 tot += currentProducts[i].num;
             }
             $('.badge').text(tot);
-            console.log(tot);
         });
     }
-
+    
     function search(){
         let searchval = $(this).val().toLowerCase();
         $(".page-section").hide();

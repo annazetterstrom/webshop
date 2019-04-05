@@ -23,7 +23,7 @@ $(function(){
                 <p>
                     <span>${itemArray[i].item.title}  <span class="price">${itemArray[i].item.price}</span> Galleons</span>
                     <button data-product-code=${itemArray[i].item.code} class="sm-btn btn-danger removebutton">X</button>
-                    <input data-product-code=${itemArray[i].item.code} class="quantity" type="number" max="5" min="1" value="${itemArray[i].num}" />
+                    <input data-product-code=${itemArray[i].item.code} class="quantity" type="number" min="1" value="${itemArray[i].num}" />
                </p>
                 `;
                 $('.container').append(card);
@@ -34,13 +34,22 @@ $(function(){
                 let itemArray = JSON.parse(localStorage.getItem('items'));
                 for(let i=0;i<itemArray.length;i++){
                     if(itemArray[i].item.code==$this.attr("data-product-code")){
-                        itemArray[i].num = $this.val();
+                        itemArray[i].num = +$this.val();
                         localStorage.setItem('items', JSON.stringify(itemArray));
                     }
                 }
                 calculateTotal();
+                let tot = 0;
+                for(let i=0;i<itemArray.length;i++){
+                    tot += itemArray[i].num;
+                }
+                $('.num-item').text(tot);
             });
-            $('.num-item').text(itemArray.length);
+            let tot = 0;
+            for(let i=0;i<itemArray.length;i++){
+                tot += itemArray[i].num;
+            }
+            $('.num-item').text(tot);
             $('.removebutton').on('click', function(){
                 let $this = $(this);
                 let itemArray = JSON.parse(localStorage.getItem('items'));
@@ -51,7 +60,11 @@ $(function(){
                         itemArray.splice(i, 1);
                         if(itemArray.length === 0){
                             localStorage.removeItem('items');
-                            $('.num-item').text(itemArray.length);
+                            let tot = 0;
+                            for(let i=0;i<itemArray.length;i++){
+                                tot += itemArray[i].num;
+                            }
+                            $('.num-item').text(tot);
                         } else {
                             localStorage.setItem('items', JSON.stringify(itemArray));
                         }
