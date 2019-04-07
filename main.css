@@ -44,6 +44,10 @@ button, input, a, .btn {
     text-align: center;
 }
 
+.wrapper{
+    padding: 15px; 
+}
+
 /* HEADER AND NAV */
 header {
     background-color: #00000055;
@@ -148,9 +152,20 @@ a {
 .quantity{
     width: 30px;
 }
-.main {
+.main-index{
     margin-top: 100px;
 }
+.main-confirmation {
+    margin-top: 50px;
+}
+
+h4 a{
+    text-align: center;
+    color: white;
+}
+h4 a:hover{
+    color: white;
+} 
 
 
 /* FIRST PAGE*/

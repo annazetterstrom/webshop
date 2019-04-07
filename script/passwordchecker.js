@@ -32,6 +32,7 @@ $(function(){
         $this.animate({"left" : "50vw"}, 300, "swing", slideAway).delay(1200).fadeOut(500);
         $('body').css({"height" : "unset", "overflow": "auto"});
         sessionStorage.setItem('entered', "true");
+        return false; 
     })
 
     function animateIn(){
