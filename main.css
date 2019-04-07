@@ -37,6 +37,7 @@ button, input, a, .btn {
     width: 20px;
     right: 100px;
     z-index: 5;
+    pointer-events: none;
 }
 
 .center{
