@@ -3,6 +3,7 @@
 $(function(){
     let currentStuff = JSON.parse(localStorage.getItem('items'));
     currentStuff = currentStuff ? currentStuff : [];
+    console.log(currentStuff);
     let total = 0;
     for(let i=0;i<currentStuff.length;i++){
         total += currentStuff[i].num;
