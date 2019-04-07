@@ -4,7 +4,7 @@ $(function(){
     let animating = true;
     $('body').css({"height" : "100vh", "overflow": "hidden"});
     setInterval(animateOwl, 10000);
-    if(localStorage.getItem('enter')=='true' || this.innerWidth > "500px"){
+    if(localStorage.getItem('enter')=='true' || this.innerWidth < 500){
         $('.darkness').hide().css({"z-index" : 2});
         $('.password').remove();
         animateIn();
