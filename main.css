@@ -1,4 +1,4 @@
-/* GLOBAL */
+/* GLOBAL */ 
 html {
     background-image: url('./images/background2.jpg');
     background-position: center;
@@ -213,7 +213,7 @@ h1 {
     box-shadow: 12px 29px 81px 0px rgb(255, 255, 255);
 }
 
-/* validation */
+/* VALIDATE */
 .error {
     color: red;
 }
