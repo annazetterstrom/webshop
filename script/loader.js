@@ -16,7 +16,7 @@ $(function(){
     let $darkness = $('.darkness');
     let $menu = $('.burgermenu');
     let $li = $('.burgermenu li');
-    let $label = $('[for=burgerbutton]');
+    let $label = $('.burgerbutton span');
 
     $burgerbutton.on('click', toggler);
     $darkness.on('click', toggler);
